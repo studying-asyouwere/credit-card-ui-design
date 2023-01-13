@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+body::before {
+    content: '';
+    background: rgba(255, 255, 255, 0.3);
+    display: block;
+    position: fixed;
+    inset: 0;
+}
+
+.credit-card {
+    display: flex;
+    flex-flow: column nowrap;
+    background: linear-gradient(90deg, black, #1b1b1b, black);
+    color: white;
+    width: 500px;
+    height: 270px;
+    border-radius: 15px;
+    text-shadow: 0 2px 0 black;
+    box-shadow: 0 10px 50px -10px black;
+    animation: cardAnimation 1s alternate infinite;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.credit-card::before {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 600px;
+    position: absolute;
+    background-color: rgb(255, 96, 96);
+    top: -10rem;
+    left: 22rem;
+    transform: rotate(15deg);
+    box-shadow: 0 10px 50px -10px rgba(40, 40, 40, 0.9);
+}
+
+.credit-card::after {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 600px;
+    position: absolute;
+    background-color: rgb(255, 96, 96);
+    top: -10rem;
+    left: 25rem;
+    transform: rotate(-15deg);
+    box-shadow: 0 10px 50px -10px rgba(40, 40, 40, 0.9);
+}
+
+@keyframes cardAnimation {
+    from {
+        transform: rotate(-2deg);
+    }
+    to {
+        transform: rotate(2deg);
+    }
+}
+
+.credit-card-top {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    font-size: 2rem;
+}
+
+.github {
+    width: 3rem;
+    height: auto;
+}
+
+.credit-card-centre {
+    display: flex;
+    flex-flow: row wrap;
+    z-index: 1;
+}
+
+.chip {
+    width: 5rem;
+    height: auto;
+}
+
+.wifi {
+    width: 4rem;
+    height: auto;
+    transform: rotate(90deg);
+}
+
+.number,
+.expiry-date,
+.name {
+    font-family: 'Exo', sans-serif;
+}
+
+.number {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    word-spacing: 2rem;
+}
+
+.credit-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.credit-card-bottom-left {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+}
+
+.expiry {
+    word-spacing: 1rem;
+}
+
+.expiry-date {
+    font-size: 1.5rem;
+}
+
+.name {
+    font-size: 1.5rem;
+}
+
+.mc {
+    width: 60px;
+    height: auto;
+}
